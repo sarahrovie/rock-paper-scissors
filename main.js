@@ -1,7 +1,7 @@
 // Randomly returns a string value between "rock", "paper" or "scissors"
 const getComputerChoice = () => {
     // Randomly pick a random number between 1 and 3
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
     
     // Return a specific string depending on which number is picked
     if (randomNumber === 1) {
@@ -13,4 +13,11 @@ const getComputerChoice = () => {
     }
 }
 
+// Prompts the user for their choice
+const getHumanChoice = () => {
+    const userInput = prompt("Rock, paper or scissors?", "");
+    return userInput;
+}
+
 console.log(getComputerChoice());
+console.log(getHumanChoice());
