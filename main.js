@@ -23,5 +23,36 @@ const getHumanChoice = () => {
 let humanScore = 0;
 let computerScore = 0;
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+// Takes both user and computer's choices and finds the winner of the round
+const playRound = (humanChoice, computerChoice) => {
+    // Make humanChoice case-insensitive
+    humanChoice = humanChoice.toLowerCase();
+    
+    // Define winner of round
+    if (humanChoice === "paper" && computerChoice === "rock") {
+        humanScore++;
+        console.log("You win! Paper beats Rock.");
+    } else if (computerChoice === "paper" && humanChoice === "rock") {
+        computerScore++;
+        console.log("You lose! Paper beats Rock.");
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        humanScore++;
+        console.log("You win! Rock beats Scissors.");
+    } else if (computerChoice === "rock" && humanChoice === "scissors") {
+        computerScore++;
+        console.log("You lose! Rock beats Scissors.");
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        humanScore++;
+        console.log("You win! Scissors beats Paper.");
+    } else if (computerChoice === "scissors" && humanChoice === "paper") {
+        computerScore++;
+        console.log("You lose! Scissors beats Paper.");
+    } else {
+        console.log("It's a tie!");
+    }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
