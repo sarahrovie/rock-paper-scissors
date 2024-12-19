@@ -19,9 +19,9 @@ const getHumanChoice = () => {
     return userInput;
 }
 
-// Variables to keep track of the scores
-let humanScore = 0;
-let computerScore = 0;
+    // Variables to keep track of the scores
+    let humanScore = 0;
+    let computerScore = 0;
 
 // Takes both user and computer's choices and finds the winner of the round
 const playRound = (humanChoice, computerChoice) => {
@@ -52,7 +52,17 @@ const playRound = (humanChoice, computerChoice) => {
     }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+// Plays 5 rounds of the game
+const playGame = () => {
 
-playRound(humanChoice, computerChoice);
+    for (let i = 1; i < 6; i++) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+
+        playRound(humanChoice, computerChoice);
+    }
+
+    console.log(humanScore, computerScore);
+}
+
+playGame();
