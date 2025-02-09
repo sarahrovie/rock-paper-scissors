@@ -7,6 +7,9 @@ const scissorsBtn = document.createElement("btn");
 rockBtn.textContent = "Rock";
 paperBtn.textContent = "Paper";
 scissorsBtn.textContent = "Scissors";
+rockBtn.setAttribute("class", "btns");
+paperBtn.setAttribute("class", "btns");
+scissorsBtn.setAttribute("class", "btns");
 
 divBtns.appendChild(rockBtn);
 divBtns.appendChild(paperBtn);
